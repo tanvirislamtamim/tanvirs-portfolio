@@ -128,7 +128,7 @@ export default function Footer() {
             >
               <InstagramIcon className="w-5 h-5" />
             </a>
-            
+
             <a
               href="mailto:ti414815@gmail.com"
               className="text-zinc-500 hover:text-white transition-colors"

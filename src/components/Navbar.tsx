@@ -46,7 +46,7 @@ export default function Navbar() {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     const activeTheme = savedTheme || systemTheme || "dark";
-    
+
     const deferTimer = setTimeout(() => {
       setTheme(activeTheme);
       if (activeTheme === "dark") {
@@ -63,7 +63,7 @@ export default function Navbar() {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    
+
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -117,7 +117,7 @@ export default function Navbar() {
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       setIsOpen(false); // Close mobile menu if open
       const offsetTop = targetElement.offsetTop - 80; // Offset for header height
@@ -131,13 +131,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 transform ${isVisible ? "translate-y-0" : "-translate-y-full"
+        } ${isScrolled
           ? "bg-white/80 dark:bg-zinc-950/75 backdrop-blur-md py-4 shadow-xl"
           : "bg-transparent py-6"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Brand/Logo */}
@@ -159,11 +157,10 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className={`text-sm font-medium transition-colors duration-300 relative py-1 ${
-                activeSection === link.href.substring(1)
+              className={`text-sm font-medium transition-colors duration-300 relative py-1 ${activeSection === link.href.substring(1)
                   ? "text-primary font-semibold"
                   : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-              }`}
+                }`}
             >
               {link.name}
               {activeSection === link.href.substring(1) && (
@@ -179,9 +176,8 @@ export default function Navbar() {
             aria-label="Toggle Theme"
           >
             <div
-              className={`absolute top-[3px] bottom-[3px] left-[3px] w-7 h-7 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-transform duration-300 ${
-                theme === "dark" ? "translate-x-9" : "translate-x-0"
-              }`}
+              className={`absolute top-[3px] bottom-[3px] left-[3px] w-7 h-7 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-transform duration-300 ${theme === "dark" ? "translate-x-9" : "translate-x-0"
+                }`}
             />
             <span className={`z-10 flex h-7 w-7 items-center justify-center transition-colors duration-300 ${theme === "light" ? "text-primary" : "text-zinc-500"}`}>
               <Sun className="w-4 h-4" />
@@ -208,9 +204,8 @@ export default function Navbar() {
             aria-label="Toggle Theme"
           >
             <div
-              className={`absolute top-[3px] bottom-[3px] left-[3px] w-7 h-7 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-transform duration-300 ${
-                theme === "dark" ? "translate-x-9" : "translate-x-0"
-              }`}
+              className={`absolute top-[3px] bottom-[3px] left-[3px] w-7 h-7 rounded-full bg-white dark:bg-zinc-800 shadow-sm transition-transform duration-300 ${theme === "dark" ? "translate-x-9" : "translate-x-0"
+                }`}
             />
             <span className={`z-10 flex h-7 w-7 items-center justify-center transition-colors duration-300 ${theme === "light" ? "text-primary" : "text-zinc-500"}`}>
               <Sun className="w-4 h-4" />
@@ -219,7 +214,7 @@ export default function Navbar() {
               <Moon className="w-4 h-4" />
             </span>
           </button>
-          
+
           <button
             ref={hamburgerRef}
             onClick={() => setIsOpen(!isOpen)}
@@ -233,9 +228,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed inset-0 top-[72px] z-40 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-lg border-t border-zinc-200 dark:border-zinc-800 transition-all duration-300 md:hidden ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
+        className={`fixed inset-0 top-[72px] z-40 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-lg border-t border-zinc-200 dark:border-zinc-800 transition-all duration-300 md:hidden ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+          }`}
       >
         <div
           ref={mobileMenuRef}
@@ -248,11 +242,10 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className={`text-lg font-medium transition-all duration-300 px-5 py-3.5 rounded-xl border flex items-center ${
-                activeSection === link.href.substring(1)
+              className={`text-lg font-medium transition-all duration-300 px-5 py-3.5 rounded-xl border flex items-center ${activeSection === link.href.substring(1)
                   ? "text-white bg-gradient-to-r from-primary to-purple-600 border-primary/50 shadow-lg font-bold"
                   : "text-zinc-700 dark:text-zinc-300 bg-zinc-300 dark:bg-zinc-900/90 border-zinc-300/80 dark:border-zinc-800 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/80"
-              }`}
+                }`}
             >
               {link.name}
             </a>
