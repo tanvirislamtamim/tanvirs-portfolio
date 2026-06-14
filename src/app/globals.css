@@ -1,26 +1,277 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #8b5cf6;
+  --color-secondary: #06b6d4;
+  --color-accent: #f43f5e;
+  --color-dark-bg: #09090b;
+  --color-dark-card: #18181b;
+  --color-zinc-850: #202023;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9fafb;
+  color: #18181b;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.dark .glass {
+  background: rgba(15, 15, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+/* Glow effect */
+.glow-primary {
+  box-shadow: 0 0 45px -5px rgba(139, 92, 246, 0.25);
+}
+.glow-secondary {
+  box-shadow: 0 0 45px -5px rgba(6, 182, 212, 0.25);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Delayed floating animation */
+.animate-float-delayed {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* ==========================================
+   Light Mode Color Overrides (html:not(.dark))
+   ========================================== */
+
+html:not(.dark) .text-white {
+  color: #18181b !important;
+}
+
+html:not(.dark) .text-zinc-350,
+html:not(.dark) .text-zinc-300 {
+  color: #3f3f46 !important;
+}
+
+html:not(.dark) .text-zinc-400 {
+  color: #52525b !important;
+}
+
+html:not(.dark) .text-zinc-500 {
+  color: #71717a !important;
+}
+
+html:not(.dark) .bg-zinc-950\/40 {
+  background-color: rgba(243, 244, 246, 0.4) !important;
+}
+
+html:not(.dark) .bg-zinc-950\/75 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html:not(.dark) .bg-zinc-950\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html:not(.dark) .bg-zinc-950 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .bg-\[\#0b0e10\]\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html:not(.dark) .bg-\[\#121619\] {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .bg-zinc-900\/40 {
+  background-color: rgba(244, 244, 245, 0.6) !important;
+}
+
+html:not(.dark) .bg-zinc-950\/60 {
+  background-color: rgba(244, 244, 245, 0.8) !important;
+}
+
+html:not(.dark) .bg-zinc-900 {
+  background-color: #f4f4f5 !important;
+}
+
+html:not(.dark) .bg-\[\#121619\]\/40 {
+  background-color: rgba(244, 244, 245, 0.5) !important;
+}
+
+html:not(.dark) .border-zinc-900,
+html:not(.dark) .border-zinc-850,
+html:not(.dark) .border-zinc-800 {
+  border-color: #d4d4d8 !important;
+}
+
+html:not(.dark) .text-primary {
+  color: #7c3aed !important;
+}
+
+html:not(.dark) .placeholder-zinc-600::placeholder {
+  color: #a1a1aa !important;
+}
+
+html:not(.dark) .bg-\[\#eef1f6\] {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+
+html:not(.dark) .bg-\[\#eef1f6\]:hover {
+  background-color: #27272a !important;
+}
+
+/* Final light mode adjustments */
+html:not(.dark) .text-zinc-200 {
+  color: #27272a !important;
+}
+
+html:not(.dark) .bg-zinc-950\/70 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html:not(.dark) .bg-\[\#0c1012\] {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .bg-\[\#121619\]\/40 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .hover\:bg-\[\#121619\]\/80:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .glass.hover\:bg-zinc-800\/50:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .hover\:bg-zinc-800:hover {
+  background-color: #e4e4e7 !important;
+}
+
+html:not(.dark) .bg-primary\/20,
+html:not(.dark) .bg-secondary\/15,
+html:not(.dark) .bg-primary\/5,
+html:not(.dark) .bg-secondary\/5 {
+  opacity: 0.25 !important;
+}
+
+/* Additional Light Mode Overrides */
+html:not(.dark) .bg-zinc-900\/80 {
+  background-color: rgba(244, 244, 245, 0.8) !important;
+}
+
+html:not(.dark) .bg-zinc-900\/50 {
+  background-color: rgba(244, 244, 245, 0.6) !important;
+}
+
+html:not(.dark) .text-secondary {
+  color: #0891b2 !important;
+}
+
+html:not(.dark) .text-accent {
+  color: #e11d48 !important;
+}
+
+html:not(.dark) .group:hover .group-hover\:text-white {
+  color: #18181b !important;
+}
+
+html:not(.dark) .group:hover .group-hover\:bg-zinc-800 {
+  background-color: #e4e4e7 !important;
+}
+
+html:not(.dark) .hover\:text-white:hover {
+  color: #18181b !important;
+}
+
+html:not(.dark) .hover\:bg-zinc-850:hover {
+  background-color: #e4e4e7 !important;
+}
+
+html:not(.dark) .bg-gradient-to-r:not(.text-transparent):not(.bg-clip-text),
+html:not(.dark) .bg-gradient-to-r:not(.text-transparent):not(.bg-clip-text) * {
+  color: #ffffff !important;
+}
+
+/* More Light Mode Border Overrides */
+html:not(.dark) .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark) .glass {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark) .border-l.border-zinc-800 {
+  border-color: #a1a1aa !important;
+}
+
+html:not(.dark) .border-zinc-800\/80,
+html:not(.dark) .hover\:border-zinc-800\/80:hover {
+  border-color: #a1a1aa !important;
+}
+
+html:not(.dark) .border-zinc-200\/80 {
+  border-color: #d4d4d8 !important;
 }
