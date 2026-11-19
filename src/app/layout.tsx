@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "google608e4352614a74ac",
+  },
   openGraph: {
     type: "website",
     title: "Tanvir Islam Tamim | MERN Stack Developer",
