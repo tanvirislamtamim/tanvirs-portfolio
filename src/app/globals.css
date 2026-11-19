@@ -275,3 +275,127 @@ html:not(.dark) .hover\:border-zinc-800\/80:hover {
 html:not(.dark) .border-zinc-200\/80 {
   border-color: #d4d4d8 !important;
 }
+
+/* ==========================================
+   Projects Section — Light Mode Fixes
+   ========================================== */
+
+/* Headings: text-zinc-50 → near-black in light */
+html:not(.dark) .text-zinc-50 {
+  color: #18181b !important;
+}
+
+/* text-zinc-100 (modal text, challenge titles) */
+html:not(.dark) .text-zinc-100 {
+  color: #27272a !important;
+}
+
+/* teal accent text — darken for light backgrounds */
+html:not(.dark) .text-teal-400 {
+  color: #0d9488 !important;
+}
+html:not(.dark) .text-teal-400\/90 {
+  color: rgba(13, 148, 136, 0.9) !important;
+}
+html:not(.dark) .text-teal-400\/80 {
+  color: rgba(13, 148, 136, 0.8) !important;
+}
+
+/* bg-zinc-800 family → light grays */
+html:not(.dark) .bg-zinc-800 {
+  background-color: #e4e4e7 !important;
+}
+html:not(.dark) .bg-zinc-800\/80 {
+  background-color: rgba(228, 228, 231, 0.8) !important;
+}
+html:not(.dark) .bg-zinc-800\/60 {
+  background-color: rgba(228, 228, 231, 0.6) !important;
+}
+html:not(.dark) .bg-zinc-800\/40 {
+  background-color: rgba(228, 228, 231, 0.4) !important;
+}
+
+/* bg-zinc-900/60 (button bg, thumbnails) */
+html:not(.dark) .bg-zinc-900\/60 {
+  background-color: rgba(244, 244, 245, 0.8) !important;
+}
+
+html:not(.dark) .bg-zinc-900\/90 {
+  background-color: rgba(244, 244, 245, 0.95) !important;
+}
+
+html:not(.dark) .bg-zinc-900\/95 {
+  background-color: rgba(244, 244, 245, 0.98) !important;
+}
+
+/* border-zinc-700 family → light borders */
+html:not(.dark) .border-zinc-700 {
+  border-color: #d4d4d8 !important;
+}
+html:not(.dark) .border-zinc-700\/50 {
+  border-color: rgba(212, 212, 216, 0.6) !important;
+}
+html:not(.dark) .border-zinc-700\/40 {
+  border-color: rgba(212, 212, 216, 0.5) !important;
+}
+html:not(.dark) .border-zinc-700\/30 {
+  border-color: rgba(212, 212, 216, 0.4) !important;
+}
+html:not(.dark) .border-zinc-700\/60 {
+  border-color: rgba(212, 212, 216, 0.7) !important;
+}
+html:not(.dark) .border-zinc-700\/80 {
+  border-color: rgba(212, 212, 216, 0.85) !important;
+}
+
+/* border-zinc-600 (secondary button borders) */
+html:not(.dark) .border-zinc-600 {
+  border-color: #a1a1aa !important;
+}
+html:not(.dark) .hover\:border-zinc-400:hover {
+  border-color: #71717a !important;
+}
+
+/* bg-zinc-50 (primary button) → keep dark in light mode */
+html:not(.dark) .bg-zinc-50 {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+html:not(.dark) .hover\:bg-zinc-200:hover {
+  background-color: #27272a !important;
+}
+html:not(.dark) .text-zinc-950 {
+  color: #ffffff !important;
+}
+
+/* Modal backdrop — light mode */
+html:not(.dark) .backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* teal ring on active thumbnail */
+html:not(.dark) .ring-teal-400\/50 {
+  --tw-ring-color: rgba(13, 148, 136, 0.5) !important;
+}
+html:not(.dark) .border-teal-400 {
+  border-color: #0d9488 !important;
+}
+
+/* bg-teal-400/80 (bullet dots) */
+html:not(.dark) .bg-teal-400\/80 {
+  background-color: rgba(13, 148, 136, 0.8) !important;
+}
+
+/* hover states in light mode */
+html:not(.dark) .hover\:bg-zinc-800\/60:hover {
+  background-color: rgba(228, 228, 231, 0.6) !important;
+}
+html:not(.dark) .hover\:text-zinc-50:hover {
+  color: #18181b !important;
+}
+html:not(.dark) .hover\:bg-zinc-900:hover {
+  background-color: #e4e4e7 !important;
+}
+html:not(.dark) .hover\:bg-zinc-700:hover {
+  background-color: #d4d4d8 !important;
+}

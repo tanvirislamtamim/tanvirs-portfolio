@@ -179,7 +179,7 @@ export default function Hero() {
               </motion.span>
               <br />
               <span className="text-2xl sm:text-3xl md:text-4xl text-zinc-300 font-semibold mt-2 block">
-                MERN Stack Developer
+                MERN Stack Developer from Bangladesh
               </span>
             </h1>
           )}
@@ -191,7 +191,7 @@ export default function Hero() {
             className="space-y-6 flex flex-col"
           >
             <p className="text-zinc-400 text-base sm:text-lg max-w-xl leading-relaxed">
-              I build modern, high-performance web applications using MongoDB, Express.js, React, and Node.js. Focused on crafting clean code, premium user interfaces, and robust backend architectures.
+              I build fast, scalable and modern web applications using React, Next.js, Node.js, Express.js and MongoDB. Focused on crafting clean code, premium user interfaces, and robust backend architectures.
             </p>
 
             {/* Call to Action Buttons */}
@@ -274,7 +274,7 @@ export default function Hero() {
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-zinc-900 bg-zinc-950 flex items-center justify-center shadow-2xl">
               <Image
                 src="/TanvirProfile.jpeg"
-                alt="Tanvir Islam Tamim Portfolio Avatar"
+                alt="Tanvir Islam Tamim - MERN Stack Developer from Bangladesh"
                 fill
                 priority
                 className="object-cover scale-105 group-hover:scale-110 transition-transform duration-500"

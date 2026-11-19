@@ -40,7 +40,7 @@ export default function About() {
             <span>About Me</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            My Biography &amp; Education
+            About Tanvir Islam Tamim
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full" />
         </div>
@@ -50,10 +50,10 @@ export default function About() {
           {/* Left Side: About bio & quick details */}
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-2xl font-semibold text-white">
-              Who am I?
+              Who is Tanvir Islam Tamim?
             </h3>
             <p className="text-zinc-400 leading-relaxed">
-              I am a passionate and dedicated MERN Stack Developer based in Dhaka, Bangladesh. With a solid foundation in computer science and modern web technologies, I love creating clean, fast, and secure web applications.
+              I am a passionate and dedicated MERN Stack Developer based in Faridpur, Bangladesh. With a solid foundation in computer science and modern web technologies, I specialize in building fast, scalable and modern web applications using React, Next.js, Node.js, Express.js and MongoDB.
             </p>
             <p className="text-zinc-400 leading-relaxed">
               My expertise lies in crafting scalable backends using Node.js and Express.js, integrating MongoDB databases, and designing intuitive, interactive frontends with React and Next.js. I constantly strive to write clean, maintainable code and follow industry best practices.
