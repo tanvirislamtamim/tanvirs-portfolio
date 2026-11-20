@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,9 +14,14 @@ const geistMono = Geist_Mono({
 
 const SITE_URL = "https://tanvir-islam-tamim-portfolio.netlify.app";
 
+export const viewport: Viewport = {
+  themeColor: "#09090b",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Tanvir Islam Tamim | MERN Stack Developer | React, Node.js & Next.js",
+  applicationName: "Tanvir Islam Tamim",
   description:
     "Tanvir Islam Tamim is a MERN Stack Developer from Bangladesh specializing in React, Next.js, Node.js, Express.js, MongoDB and modern web application development.",
   keywords: [
@@ -45,16 +50,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+  },
   verification: {
     google: "google608e4352614a74ac",
   },
   openGraph: {
     type: "website",
     title: "Tanvir Islam Tamim | MERN Stack Developer",
+    siteName: "Tanvir Islam Tamim",
     description:
       "Portfolio of Tanvir Islam Tamim — MERN Stack Developer specializing in React, Next.js, Node.js, Express.js and MongoDB.",
     url: SITE_URL,
-    siteName: "Tanvir Islam Tamim",
     locale: "en_US",
     images: [
       {
@@ -79,7 +96,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Tanvir Islam Tamim",
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
   jobTitle: "MERN Stack Developer",
   description:
     "MERN Stack Developer specializing in React, Next.js, Node.js, Express.js and MongoDB.",
@@ -106,7 +123,12 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Tanvir Islam Tamim",
-  url: SITE_URL,
+  alternateName: [
+    "Tanvir Tamim",
+    "Tanvir Islam Tamim Portfolio",
+    "Tanvir Islam Tamim Developer",
+  ],
+  url: `${SITE_URL}/`,
   description:
     "Official portfolio of Tanvir Islam Tamim, a MERN Stack Developer from Bangladesh.",
 };
@@ -122,7 +144,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="application-name" content="Tanvir Islam Tamim" />
+        <meta name="apple-mobile-web-app-title" content="Tanvir Islam Tamim" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
